@@ -90,13 +90,17 @@ if [ "$type" == "new" ]; then
  echo "[
  \"Allow group 'Default'/'$group_name' to manage instance-family in tenancy\",
  \"Allow group 'Default'/'$group_name' to manage volume-family in tenancy\",
- \"Allow group 'Default'/'$group_name' to manage virtual-network-family in tenancy\"
+ \"Allow group 'Default'/'$group_name' to manage virtual-network-family in tenancy\",
+ \"Allow group 'Default'/'$group_name' to use users in tenancy where target.group.name != 'Administrators'\",
+ \"Allow group 'Default'/'$group_name' to use groups in tenancy where target.group.name != 'Administrators'\"
  ]" > statements.json
 else 
  echo "[
  \"Allow group $group_name to manage instance-family in tenancy\",
  \"Allow group $group_name to manage volume-family in tenancy\",
  \"Allow group $group_name to manage virtual-network-family in tenancy\"
+ \"Allow group $group_name to use users in tenancy where target.group.name != 'Administrators'\"
+ \"Allow group $group_name to use groups in tenancy where target.group.name != 'Administrators'\"
  ]" > statements.json
 fi
 # 检查命令执行结果
