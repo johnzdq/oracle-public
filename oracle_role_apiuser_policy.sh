@@ -88,11 +88,11 @@ fi
 # 策略语句
 if [ "$type" == "new" ]; then
  echo "[
- \"Allow group 'Default'/'$group_name' to manage instance-family in tenancy\",
- \"Allow group 'Default'/'$group_name' to manage volume-family in tenancy\",
- \"Allow group 'Default'/'$group_name' to manage virtual-network-family in tenancy\",
- \"Allow group 'Default'/'$group_name' to use users in tenancy where target.group.name != 'Administrators'\",
- \"Allow group 'Default'/'$group_name' to use groups in tenancy where target.group.name != 'Administrators'\"
+ \"Allow group 'OracleIdentityCloudService'/'$group_name' to manage instance-family in tenancy\",
+ \"Allow group 'OracleIdentityCloudService'/'$group_name' to manage volume-family in tenancy\",
+ \"Allow group 'OracleIdentityCloudService'/'$group_name' to manage virtual-network-family in tenancy\",
+ \"Allow group 'OracleIdentityCloudService'/'$group_name' to use users in tenancy where target.group.name != 'Administrators'\",
+ \"Allow group 'OracleIdentityCloudService'/'$group_name' to use groups in tenancy where target.group.name != 'Administrators'\"
  ]" > statements.json
 else 
  echo "[
